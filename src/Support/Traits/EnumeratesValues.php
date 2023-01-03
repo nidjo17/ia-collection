@@ -281,7 +281,7 @@ trait EnumeratesValues
      * @param  callable  $callback
      * @return static
      */
-    public function flatMap(callable $callback)
+    public function flatMap(callable $callback): static
     {
         return $this->map($callback)->collapse();
     }
@@ -725,7 +725,7 @@ trait EnumeratesValues
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return array_map(function ($value) {
             if ($value instanceof JsonSerializable) {
